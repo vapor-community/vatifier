@@ -75,6 +75,10 @@ extension Application.Vatifier: VatifierClient {
     public func verify(_ vatNumber: String, country: Country) -> EventLoopFuture<VATVerificationResponse> {
         self.client.verify(vatNumber, country: country)
     }
+    
+    public func verify(_ vatNumber: String, country: Country) async throws -> VATVerificationResponse {
+        try await self.client.verify(vatNumber, country: country)
+    }
 }
 
 extension Request {

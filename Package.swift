@@ -1,11 +1,11 @@
-// swift-tools-version:5.2
+// swift-tools-version:5.6
 
 import PackageDescription
 
 let package = Package(
     name: "vatifier",
     platforms: [
-        .macOS(.v10_15)
+        .macOS(.v12)
     ],
     products: [
         .library(
@@ -13,8 +13,8 @@ let package = Package(
             targets: ["Vatifier"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/vapor/vapor.git", from: "4.0.0"),
-        .package(url: "https://github.com/yahoojapan/SwiftyXMLParser.git", from: "5.2.0")
+        .package(url: "https://github.com/vapor/vapor.git", from: "4.55.4"),
+        .package(url: "https://github.com/yahoojapan/SwiftyXMLParser.git", from: "5.6.0")
     ],
     targets: [
         .target(
