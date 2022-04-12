@@ -48,7 +48,7 @@ public struct VIESClient: VatifierClient {
                 }
                 
                 guard let response = result.response else {
-                    return self.client.eventLoop.future(error: VIESError(faultString: ""))
+                    return self.client.eventLoop.future(error: VIESError(faultString: "Empty response"))
                 }
                 
                 return self.client.eventLoop.future(response)
@@ -69,7 +69,7 @@ public struct VIESClient: VatifierClient {
         }
         
         guard let response = result.response else {
-            throw VIESError(faultString: "")
+            throw VIESError(faultString: "Empty response")
         }
         
         return response
